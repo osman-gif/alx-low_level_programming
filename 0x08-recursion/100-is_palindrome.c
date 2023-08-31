@@ -17,8 +17,9 @@ int pal(int st, char *s, int size)
 		return (pal(++st, s, --size));
 }
 /**
- * size - calculate the size of a string
+ * sizes - calculate the size of a string
  * @s: string which size is to be calculated
+ * @size: size of the string
  * Return: return the string size
  */
 int sizes(char *s, int size)
@@ -36,7 +37,7 @@ int sizes(char *s, int size)
  */
 int is_palindrome(char *s)
 {
-	int sizet = sizes(s,0);
+	int sizet = sizes(s, 0);
 
 	return (pal(0, s, sizet - 1));
 }
