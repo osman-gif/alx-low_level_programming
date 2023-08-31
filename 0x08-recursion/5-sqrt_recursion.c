@@ -1,12 +1,13 @@
+#include <stddef.h>
 /**
  * _sqrt - checks if a number has a natural square root
  * @num: The number to be checked
  * @root: The possible root
  * Return: Returns root if success -1 otherwise
  */
-int _sqrt(int num, int root)
+int _sqrt(size_t num, size_t root)
 {
-	if (num < 0 || root < 0)
+	if (!num || !root)
 		return (-1);
 	if ((root * root) < num && ((root + 1) * root) > num)
 		return (-1);
@@ -18,7 +19,9 @@ int _sqrt(int num, int root)
 		return (_sqrt(num, root / 2));
 	if ((root * root) < num)
 		return (_sqrt(num, ++root));
-	return (-1);
+	if ((root * root) > num)
+		return (_sqrt(num, --root));
+	return (_sqrt(num, root));
 }
 /**
  * _sqrt_recursion - Returns the natural square root of a number
