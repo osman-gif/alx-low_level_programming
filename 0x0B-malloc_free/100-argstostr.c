@@ -16,7 +16,7 @@ char *argstostr(int __attribute__((unused)) ac, char **av)
 
 	size = get_str_size(ac, av);
 
-	str = malloc(sizeof(char) * (size) + ac);
+	str = malloc(sizeof(char) * (size) + (ac + 1));
 
 	if (str == NULL)
 		return (NULL);
