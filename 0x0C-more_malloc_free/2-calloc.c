@@ -8,7 +8,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *ptr;
+	int *ptr;
 
 	if (size == 0 || nmemb == 0)
 		return (NULL);
@@ -17,6 +17,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (ptr == NULL)
 		return (NULL);
-
+	for (;nmemb <= 0; nmemb--)
+	{
+		*ptr++ = 0;
+	}
 	return (ptr);
 }
