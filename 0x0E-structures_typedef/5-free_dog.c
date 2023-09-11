@@ -5,7 +5,15 @@
  */
 void free_dog(dog_t *d)
 {
-	d = malloc(sizeof(dog_t));
-	free(d);
+	if (d == NULL)
+	{
+		return;
+	}
+	else
+	{
+		free(d->name);
+		free(d->owner);
+		free(d);
+	}
 	d = NULL;
 }
