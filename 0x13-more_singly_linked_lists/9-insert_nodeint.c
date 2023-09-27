@@ -11,31 +11,43 @@ unsigned int listlen(listint_t *head);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int __attribute__((unused)) i, size;
-	listint_t *current, *new, *tmp;
+	listint_t __attribute__((unused)) *current, *new, *prev, *next;
 
 	size = listlen(*head);
 
-	/**if (idx > size)
-		return (NULL);**/
+	if (idx >= size)
+		return (NULL);
 
-	current = *head;
+	prev = *head;
 
 	new = malloc(sizeof(listint_t));
 
 	if (new == NULL)
-		return (NULL);
-
-	for (i = 0; i < idx && current != NULL; i++)
 	{
-		current = current->next;
-		tmp = current->next;
+		return (NULL);
+	}
+
+	if (prev == NULL)
+	{
+		*head = new;
+		new->next = NULL;
+	}
+
+	if (idx == 0)
+	{
+		new->n = n;
+		new->next = *head;
+		*head = new;
+	}
+
+	for (i = 0; i < idx - 1; i++)
+	{
+		prev = prev->next;
 	}
 
 	new->n = n;
-
-	current->next = new;
-
-	new->next = tmp;
+	new->next = prev->next;
+	prev->next = new;
 
 	return (new);
 
