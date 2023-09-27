@@ -7,13 +7,13 @@
  */
 unsigned int listlen(listint_t *head)
 {
-        unsigned int i;
+	unsigned int i;
 
-        for (i = 0; head != NULL; head = (head)->next)
-        {
-                i++;
-        }
-        return (i);
+	for (i = 0; head != NULL; head = (head)->next)
+	{
+		i++;
+	}
+	return (i);
 }
 
 
