@@ -1,5 +1,21 @@
 #include "lists.h"
 
+/**
+ * listlen - Calculates the length of a list of type listint_t list
+ * @head: first node in the list
+ * Return: Return the size of the list
+ */
+unsigned int listlen(listint_t *head)
+{
+        unsigned int i;
+
+        for (i = 0; head != NULL; head = (head)->next)
+        {
+                i++;
+        }
+        return (i);
+}
+
 
 /**
  * delete_nodeint_at_index - Deletes a node at a specifc index
@@ -11,14 +27,16 @@
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t __attribute__((unused)) *current, *prev, *next;
-	unsigned int __attribute__((unused)) i;
+	unsigned int __attribute__((unused)) i, size;
 
 	prev = (*head);
+	size = listlen(*head);
 
-	if (prev == NULL)
+	if (prev == NULL || index >= size)
 	{
 		return (-1);
 	}
+
 	if (index == 0)
 	{
 		*head = prev->next;
@@ -36,7 +54,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		{
 			prev->next = NULL;
 			free(current);
-			return (-1);
+			return (1);
 		}
 		next = current->next;
 		prev->next = next;
