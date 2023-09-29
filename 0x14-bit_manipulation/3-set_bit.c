@@ -8,17 +8,18 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int num;
+	unsigned long int num, num1;
 
 	num = 1 << index;
+	num1 = *n;
 
 	*n = num | *n;
 
 	num = 1 >> index;
 
-	if (num == *n)
-		return(1);
+	if (num1 == *n)
+		return(-1);
 	else
-		return (-1);
+		return (1);
 
 }
