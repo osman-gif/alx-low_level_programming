@@ -10,9 +10,12 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int tmpbit;
 	int i;
-	
-	i = index;
-	tmpbit = (unsigned long int)1 << i;
 
-	return (tmpbit & n?1:0);
+	if (index > 63)
+		return (-1);
+
+	i = index;
+	tmpbit = 1 << i;
+
+	return (tmpbit & n ? 1 : 0);
 }

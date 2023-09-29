@@ -19,7 +19,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	num = 1 >> index;
 
 	if (num1 == *n)
-		return(-1);
+		return (-1);
 	else
 		return (1);
 
