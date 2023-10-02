@@ -18,15 +18,14 @@ size_t char_count(char *text_content)
 }
 int create_file(const char *filename, char *text_content)
 {
-	int f_desc, written;
+	int f_desc;
 	size_t count;
 
 	count = char_count(text_content);
-	written = 0;
 
 	f_desc = open(filename,O_CREAT|O_WRONLY, S_IRUSR| S_IWUSR);
 		
-	written = write(f_desc, text_content, count);
+	write(f_desc, text_content, count);
 
 	close(f_desc);
 	return (1);
