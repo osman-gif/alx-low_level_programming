@@ -25,11 +25,9 @@ int create_file(const char *filename, char *text_content)
 	written = 0;
 
 	f_desc = open(filename,O_CREAT|O_WRONLY, S_IRUSR| S_IWUSR);
-	
-	printf("f_desc: %d\n", f_desc);	
+		
 	written = write(f_desc, text_content, count);
 
-	printf("written: %d count:%lu content:%s descriptor:%d\n", written, count, text_content, f_desc);
 	close(f_desc);
 	return (1);
 }
