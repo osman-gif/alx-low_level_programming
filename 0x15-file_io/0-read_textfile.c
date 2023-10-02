@@ -18,7 +18,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	f_desc = open(filename, O_CREAT);
-	printf("f_desc:%d\n", f_desc);
+
 	count = read(f_desc, buf, letters);
 	write(1, buf, letters);
 
