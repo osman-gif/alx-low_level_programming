@@ -28,10 +28,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	count = read(f_desc, buf, letters);
 
-	if (count == (size_t) -1)
+	if ((int)count ==  -1)
 		return (0);
 
-	if (write(1, buf, letters) == (long int) -1)
+	if ((int)write(1, buf, letters) == -1)
 		return (0);
 
 	free(buf);
