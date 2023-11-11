@@ -92,7 +92,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
 	{
 		insert_in_empty_list(*head, new);
 	}
-	/* INSERT AT BEGINING */
+	if (*head == NULL && idx != 0)
+		return (NULL);
 	else if (idx == size - size)
 	{
 		at_begining(*head, new);
