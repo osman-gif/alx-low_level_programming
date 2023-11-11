@@ -57,10 +57,15 @@ dlistint_t *at_begining(dlistint_t *head, dlistint_t *new)
 	/* INSERT AT BEGINING */
 	prev = NULL;
 	next = head;
+	if (head->prev == NULL)
+	{
 	new->next = next;
 	new->prev = prev;
 	next->prev = new;
 	head = new;
+	}
+	else
+		return (NULL);
 	return (new);
 }
 /**
@@ -98,7 +103,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
 		at_ending(*head, new);
 	}
 	/* INSERT AT INDEX */
-	if (idx > 0 && idx < size)
+	else if (idx > 0 && idx < size)
 	{
 		tmp = *head;
 		for (i = 0; i < idx; i++)
