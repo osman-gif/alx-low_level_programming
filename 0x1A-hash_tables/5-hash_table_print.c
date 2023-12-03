@@ -37,7 +37,7 @@ void hash_table_print(const hash_table_t *ht)
 		if (ht->array[index])
 		{
 			if (index <= ht->size)
-				printf("\'%s\':\'%s'", ht->array[index]->key,
+				printf("\'%s\': \'%s'", ht->array[index]->key,
 						ht->array[index]->value);
 		}
 		if (index < ht->size)
