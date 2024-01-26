@@ -1,0 +1,8 @@
+# make files
+all: school
+
+school: main.c school.c m.h
+	gcc -o school main.c school.c
+
+clean:
+	rm -f school
