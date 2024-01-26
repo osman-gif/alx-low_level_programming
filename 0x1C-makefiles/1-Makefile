@@ -10,3 +10,4 @@ school: $(SRC)
 
 clean:
 	rm -f school
+
