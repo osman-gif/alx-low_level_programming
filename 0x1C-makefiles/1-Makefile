@@ -15,6 +15,9 @@ clean:
 ifndef CC
 
 endif
+ifdef SRC
+
+endif
 
 ifeq ($(words $(CC)),1)
 
@@ -22,3 +25,8 @@ else
 
 endif
 
+ifeq ($(words $(SRC)),1)
+
+else
+
+endif
