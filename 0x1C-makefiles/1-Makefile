@@ -1,5 +1,16 @@
 # Make file
 
+ifndef CC
+
+endif
+
+ifeq ($(words $(CC)),1)
+
+else
+
+endif
+
+.SILENT:
 CC := gcc
 SRC := main.c school.c
 
@@ -10,4 +21,3 @@ school: $(SRC) m.h
 
 clean:
 	rm -f school
-
