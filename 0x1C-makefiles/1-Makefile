@@ -1,5 +1,4 @@
 # Make file
-
 .SILENT:
 CC:=gcc
 SRC:=main.c school.c
@@ -8,7 +7,7 @@ SRC:=main.c school.c
 all: school
 
 school: $(SRC) m.h
-	$(CC) -o school $(SRC)
+	$(CC) $(SRC) -o school
 
 clean:
 	rm -f school
