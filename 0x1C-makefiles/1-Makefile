@@ -1,8 +1,8 @@
 # Makefile
 
-CC=gcc
+CC:=gcc
 
-SRC=main.c school.c
+SRC:=main.c school.c
 
 .PHONY: all
 
