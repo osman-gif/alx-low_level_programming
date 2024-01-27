@@ -1,32 +1,10 @@
-# Make file
-.SILENT:
-CC:=gcc
-SRC:=main.c school.c
+# Makefile
+
+CC=gcc
+
+SRC=main.c school.c
 
 .PHONY: all
-all: school
 
-school: $(SRC) m.h
+all: main.c
 	$(CC) $(SRC) -o school
-
-clean:
-	rm -f school
-
-ifndef CC
-
-endif
-ifdef SRC
-
-endif
-
-ifeq ($(words $(CC)),1)
-
-else
-
-endif
-
-ifeq ($(words $(SRC)),1)
-
-else
-
-endif
