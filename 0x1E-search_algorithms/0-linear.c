@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * linear_search - search for an element in an array using
  * linear search algorithm
  * @arr: pointer to the array to be search
