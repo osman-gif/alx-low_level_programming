@@ -1,7 +1,7 @@
 # make file with varibales
 
 CC:=gcc
-SRC:=main.c school.c #$(wildcard *.c)
+SRC:= $(wildcard *.c)
 
 all: school
 	gcc $(SRC) -o school
