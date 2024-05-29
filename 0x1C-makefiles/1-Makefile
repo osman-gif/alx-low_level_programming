@@ -4,9 +4,3 @@ SRC := $(wildcard *.c)
 
 all: school
 	$(CC) $(SRC) -o school
-
-school: $(SRC)
-
-clean:
-	rm -f school
-
