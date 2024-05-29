@@ -4,7 +4,7 @@ CC := gcc
 SRC := $(wildcard *.c)
 
 all: school
-	gcc $(SRC) -o school
+	$(CC) $(SRC) -o school
 school: $(SRC)
 
 clean:
