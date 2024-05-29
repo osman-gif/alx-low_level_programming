@@ -10,3 +10,4 @@ school: main.c school.c
 	
 clean:
 	rm -f school
+
